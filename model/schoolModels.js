@@ -1,6 +1,6 @@
 const db = require("../config/db");
 
-// ➕ Add School
+//  Add School
 const addSchool = (data, callback) => {
     const sql = `
         INSERT INTO school (id,name, address, latitude, longitude)
@@ -20,7 +20,7 @@ const addSchool = (data, callback) => {
     );
 };
 
-// 📥 Get All Schools
+//  Get All Schools
 const getAllSchools = (callback) => {
     const sql = "SELECT * FROM school";
 
