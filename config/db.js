@@ -8,9 +8,17 @@ const db = mysql.createPool({
     port: process.env.DB_PORT || 3306,
     waitForConnections: true,
     connectionLimit: 10,
-    ssl: {
+   ssl: {
         rejectUnauthorized: false
     }
+});
+db.getConnection((err, conn) => {
+  if (err) {
+    console.log("DB ERROR ❌", err.message);
+  } else {
+    console.log("DB CONNECTED ✅");
+    conn.release();
+  }
 });
 
 module.exports = db;
